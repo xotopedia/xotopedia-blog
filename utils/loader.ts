@@ -38,7 +38,7 @@ export const markdownToPost = (file: RawFile): PostData => {
 };
 
 export const loadMarkdownFiles = async (path: string) => {
-  const blogPaths = glob.sync(`../md/${path}`);
+  const blogPaths = glob.sync(`./md/${path}`);
   const postDataList = await Promise.all(
     blogPaths.map((blogPath) => {
       const modPath = blogPath.slice(blogPath.indexOf(`md/`) + 3);
